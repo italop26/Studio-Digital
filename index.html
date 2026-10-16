@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- SEO básico -->
+  <title>IP Digital Studio | Sites e landing pages para pequenos negócios</title>
+  <meta name="description" content="Criação de landing pages, sites institucionais e sites para pequenos negócios e profissionais autônomos. Rápidos, responsivos e feitos para atrair clientes.">
+  <meta name="theme-color" content="#14121F">
+  <!-- TODO: trocar pelo endereço real quando o domínio existir -->
+  <link rel="canonical" href="https://SEU-DOMINIO.pages.dev/">
+
+  <!-- Open Graph (prévia ao compartilhar o link) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="IP Digital Studio">
+  <meta property="og:description" content="Sites e landing pages para pequenos negócios e profissionais autônomos.">
+  <meta property="og:locale" content="pt_BR">
+  <!-- TODO: adicionar og:image (1200x630) em assets/images/ -->
+
+  <!-- Fontes: só os pesos necessários -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+  <!-- ============ 1. CABEÇALHO ============ -->
+  <header class="site-header" id="topo">
+    <div class="container header__inner">
+      <a class="logo" href="#inicio" aria-label="IP Digital Studio, ir para o início">
+        <span class="logo__mark" aria-hidden="true">IP</span>
+        <span class="logo__text">Digital Studio</span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
+        <span class="menu-toggle__label">Menu</span>
+        <span class="menu-toggle__bars" aria-hidden="true"></span>
+      </button>
+
+      <nav class="nav" id="menu-principal" aria-label="Navegação principal">
+        <ul class="nav__list">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#processo">Processo</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+        <a class="btn btn--cta" href="#contato">Pedir orçamento</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- ============ 2. HERO ============ -->
+    <section class="hero section section--dark" id="inicio" aria-labelledby="hero-titulo">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <p class="eyebrow">Sites para pequenos negócios e autônomos</p>
+          <h1 id="hero-titulo">Seu negócio merece ser <span class="hl">encontrado.</span></h1>
+          <p class="hero__lead">
+            Crio sites e landing pages rápidos, bonitos e pensados para trazer clientes de verdade.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--cta" href="#contato">Solicitar orçamento</a>
+            <a class="btn btn--ghost" href="#projetos">Ver projetos</a>
+          </div>
+        </div>
+
+        <!-- Elemento visual: janela de navegador feita com formas geométricas (SVG) -->
+        <div class="hero__visual" aria-hidden="true">
+          <svg viewBox="0 0 480 400" role="img" focusable="false">
+            <title>Ilustração de uma janela de navegador montada com blocos coloridos</title>
+            <rect class="v-window" x="20" y="40" width="400" height="300" rx="14"/>
+            <rect class="v-bar" x="20" y="40" width="400" height="36" rx="14"/>
+            <circle class="v-dot v-dot--1" cx="46" cy="58" r="6"/>
+            <circle class="v-dot v-dot--2" cx="66" cy="58" r="6"/>
+            <circle class="v-dot v-dot--3" cx="86" cy="58" r="6"/>
+            <rect class="v-block v-block--violet" x="44" y="100" width="170" height="120" rx="8"/>
+            <circle class="v-block v-block--lime" cx="300" cy="150" r="52"/>
+            <path class="v-block v-block--coral" d="M44 312v-27a65 65 0 0 1 130 0v27z"/>
+            <rect class="v-line" x="190" y="252" width="190" height="10" rx="5"/>
+            <rect class="v-line" x="190" y="274" width="140" height="10" rx="5"/>
+            <rect class="v-line" x="190" y="296" width="170" height="10" rx="5"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 3. SERVIÇOS ============ -->
+    <section class="section section--light" id="servicos" aria-labelledby="servicos-titulo">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow">O que eu faço</p>
+          <h2 id="servicos-titulo">Serviços</h2>
+        </header>
+
+        <ul class="cards cards--4">
+          <li class="card service">
+            <span class="service__num" aria-hidden="true">01</span>
+            <h3>Landing pages</h3>
+            <p>Uma página focada em um objetivo: apresentar uma oferta e levar o visitante a entrar em contato.</p>
+          </li>
+          <li class="card service">
+            <span class="service__num" aria-hidden="true">02</span>
+            <h3>Sites institucionais</h3>
+            <p>Um site com várias páginas para apresentar sua empresa, seus serviços e passar confiança.</p>
+          </li>
+          <li class="card service">
+            <span class="service__num" aria-hidden="true">03</span>
+            <h3>Sites para pequenos negócios</h3>
+            <p>Barbearias, restaurantes, lojas e prestadores de serviço com presença online simples e funcional.</p>
+          </li>
+          <li class="card service">
+            <span class="service__num" aria-hidden="true">04</span>
+            <h3>Melhoria de sites existentes</h3>
+            <p>Ajustes visuais e responsividade para que seu site atual funcione bem no celular e no computador.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ 4. PROJETOS ============ -->
+    <section class="section section--dark" id="projetos" aria-labelledby="projetos-titulo">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow">Portfólio</p>
+          <h2 id="projetos-titulo">Projetos</h2>
+          <p class="section__lead">Projetos demonstrativos criados para mostrar na prática como posso desenvolver o seu site.</p>
+        </header>
+
+        <ul class="cards cards--3">
+          <!-- PROJETOS DEMOSTRATIVOS -->
+          <!-- Projeto 1: Sabor-express (demonstrativo) -->
+          <li class="card project">
+            <div class="project__media">
+              <!-- TODO: trocar pelo print real: <img src="assets/images/barber-shop.jpg" alt="..." width="800" height="500" loading="lazy"> -->
+              <img src="assets/images/hambuguer.jpg" alt="Fachada da Barber Shop" width="800" height="500" loading="lazy">
+              <span class="badge badge--demo">Projeto demonstrativo</span>
+            </div>
+            <div class="project__body">
+              <h3>Sabor Express</h3>
+              <p>Lanchonete demonstrativa com cardápio, carrinho funcional e pagamento fictício.</p>
+              <ul class="tags" aria-label="Tecnologias utilizadas">
+                <li>React</li>
+                <li>Vite</li>
+                <li>Lucide React</li>
+              </ul>
+              <!-- TODO: quando o projeto estiver no ar, trocar por <a class="btn btn--small" href="URL" target="_blank" rel="noopener">Ver demonstração</a> -->
+              <a class="btn btn--small" href="sabor-express/dist/index.html">Abrir demonstração</a>
+            </div>
+          </li>
+
+          <!-- Projetos futuros (mesma estrutura, para preencher depois) -->
+           <!--Projeto 2: Barber-Shop -->
+          <li class="card project">
+            <div class="project__media">
+              <img src="barber-shop/assets/img/fachada-800.webp" alt="Fachada da Barber Shop" width="800" height="500" loading="lazy">
+              <span class="badge badge--demo">Projeto demonstrativo</span>
+            </div>
+            <div class="project__body">
+              <h3>Barber Shop</h3>
+              <p>Site demonstrativo para barbearia, com apresentação de serviços, horários e contato.</p>
+              <ul class="tags" aria-label="Tecnologias utilizadas">
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+              </ul>
+              <a class="btn btn--small" href="barber-shop/index.html">Abrir demonstração</a>
+            </div>
+          </li>
+          <li class="card project">
+          <div class="project__media">
+            <img src="assets/images/dashboard.jpg" alt="Fachada da Barber Shop" width="800" height="500" loading="lazy">
+              <span class="badge badge--demo">Projeto demonstrativo</span>
+          </div>
+      
+          
+            <span class="badge badge--demo">Projeto demonstrativo</span>
+           
+            <div class="project__body">
+              <h3>Dashboard FastAPI</h3>
+              <p>Painel de dados com React, API em Python, banco SQLite e operações CRUD.</p>
+              <ul class="tags" aria-label="Tecnologias utilizadas">
+                <li>React</li>
+                <li>FastAPI</li>
+                <li>SQLite</li>
+              </ul>
+              <a class="btn btn--small" href="dashboard/Painel Atlântica.html">Abrir demonstração</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ 5. PROCESSO ============ -->
+    <section class="section section--light" id="processo" aria-labelledby="processo-titulo">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow">Como funciona</p>
+          <h2 id="processo-titulo">Processo de trabalho</h2>
+        </header>
+
+        <ol class="steps">
+          <li class="step">
+            <span class="step__num" aria-hidden="true">1</span>
+            <h3>Entendimento</h3>
+            <p>Converso com você para entender seu negócio, seu público e o que o site precisa resolver.</p>
+          </li>
+          <li class="step">
+            <span class="step__num" aria-hidden="true">2</span>
+            <h3>Planejamento</h3>
+            <p>Defino a estrutura, o conteúdo e o visual do site antes de começar a desenvolver.</p>
+          </li>
+          <li class="step">
+            <span class="step__num" aria-hidden="true">3</span>
+            <h3>Desenvolvimento</h3>
+            <p>Construo o site com código limpo, responsivo e preparado para carregar rápido.</p>
+          </li>
+          <li class="step">
+            <span class="step__num" aria-hidden="true">4</span>
+            <h3>Testes e entrega</h3>
+            <p>Testo em diferentes telas, faço os ajustes combinados e publico o site.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ 6. SOBRE ============ -->
+    <section class="section section--violet" id="sobre" aria-labelledby="sobre-titulo">
+      <div class="container about">
+        <header class="section__head">
+          <p class="eyebrow">Sobre o estúdio</p>
+          <h2 id="sobre-titulo">Tecnologia com cuidado em cada detalhe</h2>
+        </header>
+        <div class="about__text">
+          <!-- TODO: revisar e personalizar com a sua história. Não incluir nada que não seja verdade. -->
+          <p>O IP Digital Studio nasceu para ajudar pequenos negócios e profissionais autônomos a terem uma presença digital clara e profissional.</p>
+          <p>Cada site é desenvolvido do zero, sem templates prontos, com atenção à velocidade, ao uso no celular e à facilidade de contato com o cliente.</p>
+          <p>Sou estudante de Análise e Desenvolvimento de Sistemas e trabalho com compromisso: converso, explico cada etapa e entrego o que combinamos.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 7. CONTATO ============ -->
+    <section class="section section--dark" id="contato" aria-labelledby="contato-titulo">
+      <div class="container contact">
+        <div class="contact__intro">
+          <p class="eyebrow">Vamos conversar</p>
+          <h2 id="contato-titulo">Peça seu orçamento</h2>
+          <p>Conte o que você precisa. Respondo para combinar os próximos passos.</p>
+
+          <!-- TODO: trocar 5500000000000 pelo número real (55 + DDD + número, só dígitos) -->
+          <a class="btn btn--cta" id="btn-whatsapp"
+             href="https://wa.me/558189349248?text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20IP%20Digital%20Studio%20e%20gostaria%20de%20um%20or%C3%A7amento."
+             target="_blank" rel="noopener">Falar no WhatsApp</a>
+
+          <ul class="social" aria-label="Redes profissionais">
+            <!-- TODO: preencher com os links reais (ou remover os que não usar) -->
+            <li><a href="https://www.instagram.com/italop.26/" target="_blank" rel="noopener noreferrer" data-todo="instagram">Instagram</a></li>
+            <li><a href="https://www.linkedin.com/in/italo-pedro-20590a3a6/"target="_blank" rel="noopener noreferrer" data-todo="linkedin">LinkedIn</a></li>
+            <li><a href="https://github.com/italop26" target="_blank" rel="noopener noreferrer" data-todo="github">GitHub</a></li>
+          </ul>
+        </div>
+
+        <!-- Formulário de agendamento.
+             O envio real depende de um serviço de recebimento (definimos na etapa do JavaScript).
+             data-endpoint fica vazio até lá. -->
+        <form class="form" id="form-agendamento" method="post" action="https://formspree.io/f/mgaonlar" data-endpoint="https://formspree.io/f/mgaonlar" novalidate>
+          <h3>Agendar uma conversa</h3>
+
+          <div class="field">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" autocomplete="name" required>
+          </div>
+
+          <div class="field">
+            <label for="whatsapp">WhatsApp</label>
+            <input type="tel" id="whatsapp" name="whatsapp" autocomplete="tel" inputmode="tel" required>
+          </div>
+
+          <div class="field">
+            <label for="email">E-mail <span class="optional">(opcional)</span></label>
+            <input type="email" id="email" name="email" autocomplete="email">
+          </div>
+
+          <div class="field">
+            <label for="servico">Serviço de interesse</label>
+            <select id="servico" name="servico" required>
+              <option value="">Selecione</option>
+              <option>Landing page</option>
+              <option>Site institucional</option>
+              <option>Site para pequeno negócio / autônomo</option>
+              <option>Melhoria de site existente</option>
+              <option>Ainda não sei</option>
+            </select>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="data">Melhor dia <span class="optional">(opcional)</span></label>
+              <input type="date" id="data" name="data">
+            </div>
+            <div class="field">
+              <label for="periodo">Período</label>
+              <select id="periodo" name="periodo">
+                <option value="">Tanto faz</option>
+                <option>Manhã</option>
+                <option>Tarde</option>
+                <option>Noite</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="mensagem">Conte sobre seu negócio</label>
+            <textarea id="mensagem" name="mensagem" rows="4"></textarea>
+          </div>
+
+          <!-- Campo isca contra robôs: humanos não veem, robôs preenchem -->
+          <div class="hp" aria-hidden="true">
+            <label for="site">Não preencha este campo</label>
+            <input type="text" id="site" name="site" tabindex="-1" autocomplete="off">
+          </div>
+
+          <button class="btn btn--cta" type="submit">Agendar conversa</button>
+          <p class="form__status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ 8. RODAPÉ ============ -->
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="logo__mark" aria-hidden="true">IP</span>
+        <p><strong>IP Digital Studio</strong><br>Sites para pequenos negócios e autônomos.</p>
+      </div>
+
+      <nav aria-label="Navegação do rodapé">
+        <ul class="footer__nav">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#processo">Processo</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+
+      <p class="footer__copy">&copy; <span id="ano">2026</span> IP Digital Studio. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>

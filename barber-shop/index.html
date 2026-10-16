@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Barber Shop | Estilo, cuidado e identidade</title>
+  <meta name="description" content="Barber Shop: corte masculino, barba e acabamento em um ambiente confortável e cheio de personalidade. Site de demonstração do Estúdio Digital IP.">
+  <meta name="theme-color" content="#0b0b0c">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230b0b0c'/%3E%3Cpath d='M9 22V10h7a3.5 3.5 0 0 1 0 7H9m7 0a3.5 3.5 0 0 1 0 5H9' fill='none' stroke='%23c9a45c' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+  <script>document.documentElement.classList.add('js','intro-lock');</script>
+
+  <link rel="preload" as="image" href="assets/img/fachada.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+  <!-- ======================= HEADER ======================= -->
+  <header class="site-header" id="topo">
+    <div class="container header__inner">
+      <a class="logo" href="#inicio" aria-label="Barber Shop, ir para o início">
+        <span class="logo__mark" aria-hidden="true"></span>
+        <span class="logo__text">Barber<span>Shop</span></span>
+      </a>
+
+      <nav class="nav" id="menu" aria-label="Navegação principal">
+        <ul class="nav__list">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#galeria">Galeria</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+        <a class="btn btn--gold nav__cta" href="#contato" data-whatsapp>Agendar no WhatsApp</a>
+      </nav>
+
+      <button class="menu-toggle" type="button" aria-controls="menu" aria-expanded="false" aria-label="Abrir menu">
+        <span class="menu-toggle__bar"></span>
+        <span class="menu-toggle__bar"></span>
+        <span class="menu-toggle__bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- ======================= ABERTURA ANIMADA ======================= -->
+    <section class="intro" id="abertura" aria-label="Abertura animada da barbearia">
+      <!-- Cena 1: fachada, porta abrindo e câmera entrando -->
+      <div class="intro__scene intro__scene--out" aria-hidden="true">
+        <div class="intro__camera">
+          <img class="intro__img" src="assets/img/fachada.webp" alt="" width="1408" height="768" decoding="async" fetchpriority="high">
+          <div class="door">
+            <div class="door__view"><img src="assets/img/interior.webp" alt="" width="1408" height="768" decoding="async"></div>
+            <div class="leaf leaf--l"><img src="assets/img/fachada.webp" alt="" decoding="async"></div>
+            <div class="leaf leaf--r"><img src="assets/img/fachada.webp" alt="" decoding="async"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cena 2: interior, aproximação até o espelho -->
+      <div class="intro__scene intro__scene--in" aria-hidden="true">
+        <div class="intro__camera intro__camera--in">
+          <img class="intro__img" src="assets/img/interior.webp" alt="" width="1408" height="768" decoding="async">
+        </div>
+      </div>
+
+      <div class="intro__shade" aria-hidden="true"></div>
+
+      <div class="intro__title" aria-hidden="true">
+        <p class="intro__brand">Barber<span>Shop</span></p>
+        <p class="intro__tag">Estilo, cuidado e identidade</p>
+      </div>
+
+      <a class="intro__cue" href="#inicio">
+        <span>Role para conhecer</span>
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+
+      <button class="intro__skip" type="button">Pular abertura</button>
+      <div class="intro__fade" aria-hidden="true"></div>
+    </section>
+
+    <!-- ======================= HERO ======================= -->
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <picture class="hero__media">
+        <source type="image/webp" media="(max-width: 700px)" srcset="assets/img/fachada-800.webp">
+        <img src="assets/img/fachada.webp" alt="Fachada da barbearia com tijolinhos aparentes, esquadrias pretas e portas de vidro" width="1408" height="768" decoding="async">
+      </picture>
+      <div class="hero__overlay" aria-hidden="true"></div>
+
+      <div class="container hero__inner">
+        <p class="eyebrow reveal">Barbearia · Conteúdo demonstrativo</p>
+        <h1 class="hero__title reveal" id="hero-title">Seu estilo.<br>Sua <em>identidade.</em><br>Seu momento.</h1>
+        <p class="hero__text reveal">Corte, barba e acabamento em um ambiente pensado para você relaxar e sair com a sua melhor versão.</p>
+        <div class="hero__actions reveal">
+          <a class="btn btn--gold" href="#contato" data-whatsapp>Solicitar agendamento</a>
+          <a class="btn btn--ghost" href="#servicos">Conhecer os serviços</a>
+        </div>
+        <ul class="hero__points reveal" aria-label="Destaques">
+          <li>Atendimento personalizado</li>
+          <li>Atenção aos detalhes</li>
+          <li>Ambiente confortável</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ======================= SERVIÇOS ======================= -->
+    <section class="section" id="servicos" aria-labelledby="servicos-title">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">Serviços</p>
+          <h2 class="section__title" id="servicos-title">O cuidado certo para cada detalhe</h2>
+          <p class="section__lead">Escolha o serviço e fale com a gente pelo WhatsApp. Os valores abaixo são <strong>apenas ilustrativos</strong>.</p>
+        </header>
+
+        <ul class="cards">
+          <li class="card reveal">
+            <div class="card__media"><img src="assets/img/corte.webp" alt="Cadeiras de barbeiro em couro preto diante da bancada de espelhos" width="730" height="487" loading="lazy" decoding="async"></div>
+            <div class="card__body">
+              <h3 class="card__title">Corte masculino</h3>
+              <p class="card__text">Corte alinhado ao seu estilo, com acabamento limpo e atenção ao formato do rosto.</p>
+              <div class="card__foot">
+                <p class="price"><span class="price__value">R$ 45</span><span class="price__tag">valor ilustrativo</span></p>
+                <a class="card__link" href="#contato" data-whatsapp data-service="Corte masculino">Agendar</a>
+              </div>
+            </div>
+          </li>
+
+          <li class="card reveal">
+            <div class="card__media"><img src="assets/img/barba.webp" alt="Letreiro de neon com uma âncora e a frase Respect the Beard sobre parede de tijolos" width="480" height="320" loading="lazy" decoding="async"></div>
+            <div class="card__body">
+              <h3 class="card__title">Barba</h3>
+              <p class="card__text">Modelagem, hidratação e contornos precisos para uma barba sempre bem cuidada.</p>
+              <div class="card__foot">
+                <p class="price"><span class="price__value">R$ 35</span><span class="price__tag">valor ilustrativo</span></p>
+                <a class="card__link" href="#contato" data-whatsapp data-service="Barba">Agendar</a>
+              </div>
+            </div>
+          </li>
+
+          <li class="card card--featured reveal">
+            <div class="card__media"><img src="assets/img/combo.webp" alt="Bancada de madeira com frascos de produtos e cadeiras de barbeiro ao fundo" width="500" height="333" loading="lazy" decoding="async"></div>
+            <div class="card__body">
+              <span class="card__badge">Mais completo</span>
+              <h3 class="card__title">Corte + barba</h3>
+              <p class="card__text">O combo completo: cabelo e barba na mesma visita, com o mesmo cuidado do início ao fim.</p>
+              <div class="card__foot">
+                <p class="price"><span class="price__value">R$ 70</span><span class="price__tag">valor ilustrativo</span></p>
+                <a class="card__link" href="#contato" data-whatsapp data-service="Corte + barba">Agendar</a>
+              </div>
+            </div>
+          </li>
+
+          <li class="card reveal">
+            <div class="card__media"><img src="assets/img/acabamento.webp" alt="Luminárias de filamento aparente em frente a parede de tijolos iluminada" width="460" height="307" loading="lazy" decoding="async"></div>
+            <div class="card__body">
+              <h3 class="card__title">Acabamento e finalização</h3>
+              <p class="card__text">Pezinho, sobrancelha e finalização com produtos para manter o visual por mais tempo.</p>
+              <div class="card__foot">
+                <p class="price"><span class="price__value">R$ 25</span><span class="price__tag">valor ilustrativo</span></p>
+                <a class="card__link" href="#contato" data-whatsapp data-service="Acabamento e finalização">Agendar</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ======================= SOBRE ======================= -->
+    <section class="section section--alt" id="sobre" aria-labelledby="sobre-title">
+      <div class="container about">
+        <figure class="about__media reveal">
+          <img src="assets/img/interior.webp" alt="Interior da barbearia com bancada de espelhos, cadeiras de couro e luminárias" width="1408" height="768" loading="lazy" decoding="async">
+        </figure>
+
+        <div class="about__content reveal">
+          <p class="eyebrow">Sobre a barbearia</p>
+          <h2 class="section__title" id="sobre-title">Tradição no cuidado, personalidade no ambiente</h2>
+          <p>A Barber Shop une o clima clássico das barbearias a um espaço moderno, com tijolinhos, ferro preto e iluminação quente. Cada atendimento é feito com calma, para que você saia exatamente como imaginou.</p>
+          <p>Aqui o foco é o seu estilo: conversamos, entendemos o que combina com você e cuidamos de cada detalhe.</p>
+          <ul class="ticks">
+            <li>Atenção aos detalhes em cada serviço</li>
+            <li>Ambiente confortável para relaxar</li>
+            <li>Cuidado personalizado com cada cliente</li>
+          </ul>
+          <p class="note">Texto institucional demonstrativo, para ser substituído pelo conteúdo real da barbearia.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= GALERIA ======================= -->
+    <section class="section" id="galeria" aria-labelledby="galeria-title">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">Galeria</p>
+          <h2 class="section__title" id="galeria-title">Conheça o ambiente</h2>
+        </header>
+
+        <ul class="gallery">
+          <li class="gallery__item gallery__item--wide-tall reveal">
+            <img src="assets/img/interior.webp" alt="Vista geral do salão com espelhos emoldurados em ferro preto e cadeiras de barbeiro" width="1408" height="768" loading="lazy" decoding="async">
+          </li>
+          <li class="gallery__item gallery__item--tall reveal">
+            <img src="assets/img/porta.webp" alt="Portas de vidro com moldura preta e neon de âncora visível ao fundo" width="420" height="480" loading="lazy" decoding="async">
+          </li>
+          <li class="gallery__item gallery__item--wide reveal">
+            <img src="assets/img/letreiro.webp" alt="Letreiro de ferro preto The Barber Shop sobre parede de concreto" width="620" height="320" loading="lazy" decoding="async">
+          </li>
+          <li class="gallery__item reveal">
+            <img src="assets/img/olivreira.webp" alt="Oliveira em vaso de barro ao lado da fachada de tijolos" width="308" height="540" loading="lazy" decoding="async">
+          </li>
+          <li class="gallery__item reveal">
+            <img src="assets/img/planta.webp" alt="Prateleira de madeira com plantas e uma cadeira de barbeiro ao fundo" width="330" height="328" loading="lazy" decoding="async">
+          </li>
+          <li class="gallery__item gallery__item--wide reveal">
+            <img src="assets/img/acabamento.webp" alt="Luminárias pendentes de filamento diante de parede de tijolos iluminada" width="460" height="307" loading="lazy" decoding="async">
+          </li>
+        </ul>
+        <p class="note note--center">Imagens ilustrativas para demonstração.</p>
+      </div>
+    </section>
+
+    <!-- ======================= DIFERENCIAIS ======================= -->
+    <section class="section section--alt" id="diferenciais" aria-labelledby="dif-title">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">Diferenciais</p>
+          <h2 class="section__title" id="dif-title">Por que escolher a Barber Shop</h2>
+        </header>
+
+        <ul class="features">
+          <li class="feature reveal">
+            <svg class="feature__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.9 3.1-6 7-6s7 2.1 7 6"/></svg>
+            <h3>Atendimento personalizado</h3>
+            <p>Cada cliente é único. Ouvimos o que você quer e indicamos o que mais combina.</p>
+          </li>
+          <li class="feature reveal">
+            <svg class="feature__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg>
+            <h3>Atenção aos detalhes</h3>
+            <p>Contornos, simetria e acabamento revisados com calma até o resultado final.</p>
+          </li>
+          <li class="feature reveal">
+            <svg class="feature__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 11V8a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v3"/><path d="M3 12a2 2 0 0 1 4 0v3h10v-3a2 2 0 0 1 4 0v5H3z"/><path d="M6 17v3M18 17v3"/></svg>
+            <h3>Ambiente confortável</h3>
+            <p>Um espaço acolhedor, com boa iluminação e cadeiras pensadas para o seu conforto.</p>
+          </li>
+          <li class="feature reveal">
+            <svg class="feature__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><path d="M8 7.5L20 17M8 16.5L20 7"/></svg>
+            <h3>Compromisso com o seu estilo</h3>
+            <p>Do clássico ao moderno, o objetivo é que você saia com a sua identidade em evidência.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ======================= DEPOIMENTOS ======================= -->
+    <section class="section" id="depoimentos" aria-labelledby="dep-title">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">Depoimentos</p>
+          <h2 class="section__title" id="dep-title">O que os clientes dizem</h2>
+          <p class="section__lead">Espaço preparado para receber avaliações reais. Os cartões abaixo são <strong>conteúdo demonstrativo</strong>.</p>
+        </header>
+
+        <ul class="reviews">
+          <li class="review reveal">
+            <span class="review__flag">Demonstrativo</span>
+            <p class="review__stars" aria-hidden="true">☆ ☆ ☆ ☆ ☆</p>
+            <blockquote class="review__text">Aqui entrará a avaliação de um cliente real, assim que houver depoimentos autorizados.</blockquote>
+            <p class="review__author">Nome do cliente</p>
+          </li>
+          <li class="review reveal">
+            <span class="review__flag">Demonstrativo</span>
+            <p class="review__stars" aria-hidden="true">☆ ☆ ☆ ☆ ☆</p>
+            <blockquote class="review__text">Aqui entrará a avaliação de um cliente real, assim que houver depoimentos autorizados.</blockquote>
+            <p class="review__author">Nome do cliente</p>
+          </li>
+          <li class="review reveal">
+            <span class="review__flag">Demonstrativo</span>
+            <p class="review__stars" aria-hidden="true">☆ ☆ ☆ ☆ ☆</p>
+            <blockquote class="review__text">Aqui entrará a avaliação de um cliente real, assim que houver depoimentos autorizados.</blockquote>
+            <p class="review__author">Nome do cliente</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ======================= CONTATO ======================= -->
+    <section class="section section--alt" id="contato" aria-labelledby="contato-title">
+      <div class="container contact">
+        <div class="contact__info reveal">
+          <p class="eyebrow">Localização e contato</p>
+          <h2 class="section__title" id="contato-title">Venha tomar um café com a gente</h2>
+
+          <dl class="info">
+            <div class="info__row">
+              <dt>Endereço</dt>
+              <dd><span class="placeholder">[Rua, número, bairro e cidade]</span></dd>
+            </div>
+            <div class="info__row">
+              <dt>Horário de funcionamento</dt>
+              <dd><span class="placeholder">[Dias e horários de atendimento]</span></dd>
+            </div>
+            <div class="info__row">
+              <dt>WhatsApp</dt>
+              <dd><span class="placeholder">[(00) 00000-0000]</span></dd>
+            </div>
+          </dl>
+
+          <a class="btn btn--gold" href="#contato" data-whatsapp>Chamar no WhatsApp</a>
+        </div>
+
+        <div class="contact__map reveal" role="img" aria-label="Espaço reservado para o mapa da barbearia">
+          <svg viewBox="0 0 24 24" width="40" height="40" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+          <p>O mapa será exibido aqui quando o endereço real for definido.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= CHAMADA FINAL ======================= -->
+    <section class="cta" aria-labelledby="cta-title">
+      <div class="container cta__inner reveal">
+        <h2 class="cta__title" id="cta-title">Pronto para renovar o visual?</h2>
+        <p class="cta__text">Conheça a Barber Shop e fale com a gente para reservar o seu horário.</p>
+        <a class="btn btn--gold" href="#contato" data-whatsapp>Agendar pelo WhatsApp</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================= FOOTER ======================= -->
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a class="logo" href="#inicio" aria-label="Barber Shop, ir para o início">
+          <span class="logo__mark" aria-hidden="true"></span>
+          <span class="logo__text">Barber<span>Shop</span></span>
+        </a>
+        <p>Estilo, cuidado e identidade em cada atendimento.</p>
+      </div>
+
+      <nav aria-label="Links do rodapé">
+        <h2 class="footer__title">Navegação</h2>
+        <ul class="footer__list">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#galeria">Galeria</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <h2 class="footer__title">Contato</h2>
+        <ul class="footer__list">
+          <li><span class="placeholder">[Endereço]</span></li>
+          <li><span class="placeholder">[Horário de funcionamento]</span></li>
+          <li><span class="placeholder">[WhatsApp]</span></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="footer__title">Redes sociais</h2>
+        <ul class="footer__list">
+          <li><span class="placeholder">[Link do Instagram]</span></li>
+          <li><span class="placeholder">[Link do Facebook]</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <p>&copy; <span id="year">2026</span> Barber Shop. Site de demonstração desenvolvido pelo Estúdio Digital IP.</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="js/config.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
