@@ -1,5 +1,5 @@
 /* ==========================================================
-   KYRO Labs — main.js
+   Draxivo Digital — main.js
    Arquivo único (sem módulos), então funciona até abrindo
    o index.html direto no navegador. Cada função cuida de
    uma responsabilidade e é chamada no final do arquivo.
