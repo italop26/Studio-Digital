@@ -66,43 +66,11 @@ function initHeader() {
   });
 }
 
-/* ---------- Animação de entrada ao rolar ---------- */
-function initReveal() {
-  if (!("IntersectionObserver" in window)) return;
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-  const items = document.querySelectorAll(".section__head, .card, .step, .about__text, .form");
-  document.documentElement.classList.add("js-reveal");
-
-  const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      const el = entry.target;
-      el.classList.add("is-visible");
-      obs.unobserve(el);
-      // Depois da animação, devolve o elemento ao estado normal para
-      // que o atraso/duração do reveal não atrapalhem o hover dos cards
-      setTimeout(() => {
-        el.classList.remove("reveal", "is-visible");
-        el.style.transitionDelay = "";
-      }, 900);
-    });
-  }, { threshold: 0.15 });
-
-  items.forEach((el, i) => {
-    el.classList.add("reveal");
-    el.style.transitionDelay = (i % 4) * 80 + "ms"; // pequeno escalonamento entre irmãos
-    observer.observe(el);
-  });
-}
-
 /* ---------- Ano do rodapé ---------- */
 function initYear() {
   const el = document.getElementById("ano");
   if (el) el.textContent = new Date().getFullYear();
 }
-
-/* ---------- Links sociais  ---------- */
 
 /* ---------- Formulário de agendamento ---------- */
 function initForm() {
@@ -110,6 +78,11 @@ function initForm() {
   if (!form) return;
   const status = form.querySelector(".form__status");
   const button = form.querySelector("button[type='submit']");
+  const buttonLabel = button.textContent;
+  const date = form.elements.data;
+  const today = new Date();
+  const localToday = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`;
+  date.min = localToday;
 
   function show(message, type) {
     status.textContent = message;
@@ -118,16 +91,35 @@ function initForm() {
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
+    if (button.disabled) return;
 
     // Campo isca: se um robô preencheu, finge que deu certo e não envia
     if (form.elements.site.value) return;
 
-    // Validação simples (o novalidate no HTML desliga a do navegador)
+    if (!form.reportValidity()) return;
     const nome = form.elements.nome.value.trim();
     const whatsapp = form.elements.whatsapp.value.replace(/\D/g, "");
-    if (!nome) return show("Informe seu nome.", "erro");
-    if (whatsapp.length < 10) return show("Informe um WhatsApp com DDD.", "erro");
+    if (nome.length < 2 || nome.length > 80) {
+      form.elements.nome.focus();
+      return show("Informe seu nome, com 2 a 80 caracteres.", "erro");
+    }
+    if (!/^(?:55)?[1-9]{2}9\d{8}$/.test(whatsapp)) {
+      form.elements.whatsapp.focus();
+      return show("Informe um WhatsApp válido com DDD.", "erro");
+    }
     if (!form.elements.servico.value) return show("Escolha o serviço de interesse.", "erro");
+    const mensagem = form.elements.mensagem.value.trim();
+    if (mensagem.length < 10 || mensagem.length > 1500) {
+      form.elements.mensagem.focus();
+      return show("Descreva o que precisa em 10 a 1.500 caracteres.", "erro");
+    }
+    const now = new Date();
+    const minimum = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
+    date.min = minimum;
+    if (date.value && date.value < minimum) {
+      date.focus();
+      return show("Escolha hoje ou uma data futura para a conversa.", "erro");
+    }
 
     // Sem endpoint configurado, o envio não existe: avisamos em vez de simular
     const endpoint = form.dataset.endpoint;
@@ -136,6 +128,8 @@ function initForm() {
     }
 
     button.disabled = true;
+    button.textContent = "Enviando pedido…";
+    form.setAttribute("aria-busy", "true");
     show("Enviando...", "ok");
 
     try {
@@ -146,11 +140,14 @@ function initForm() {
       });
       if (!response.ok) throw new Error("HTTP " + response.status);
       form.reset();
-      show("Recebi seu pedido! Entro em contato em breve.", "ok");
+      show("Pedido enviado. Vou entrar em contato pelo WhatsApp para combinar o horário.", "ok");
+      window.location.assign(form.dataset.successUrl);
     } catch (err) {
       show("Não consegui enviar agora. Tente de novo ou chame no WhatsApp.", "erro");
     } finally {
       button.disabled = false;
+      button.textContent = buttonLabel;
+      form.removeAttribute("aria-busy");
     }
   });
 }
@@ -158,6 +155,5 @@ function initForm() {
 /* ---------- Início ---------- */
 initMenu();
 initHeader();
-initReveal();
 initYear();
 initForm();

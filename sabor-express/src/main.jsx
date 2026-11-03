@@ -1,12 +1,151 @@
-import React,{createContext,useContext,useEffect,useMemo,useState}from'react';import{createRoot}from'react-dom/client';import{ArrowLeft,ArrowRight,Check,Clock3,Flame,Heart,Minus,Plus,ShoppingBag,ShoppingCart,Sparkles,Trash2,Utensils}from'lucide-react';import'./styles.css';
-const products=[{id:1,name:'Clássico da Casa',category:'Hambúrgueres',description:'Blend artesanal, cheddar, alface crocante e molho especial.',price:28.9,image:'photo-1568901346375-23c9450c58cd',label:'Mais pedido',featured:true},{id:2,name:'Duplo Cheddar',category:'Hambúrgueres',description:'Dois burgers suculentos, cheddar cremoso e cebola caramelizada.',price:34.9,image:'./images/duplo-cheddar.webp',label:'Favorito',featured:true},{id:3,name:'Batata Crocante',category:'Acompanhamentos',description:'Batatas douradas com toque de páprica da casa.',price:16.9,image:'photo-1573080496219-bb080dd4f877',label:'Irresistível'},{id:4,name:'Onion Rings',category:'Acompanhamentos',description:'Anéis de cebola empanados, sequinhos e crocantes.',price:18.9,image:'photo-1639024471283-03518883512d'},{id:5,name:'Milk-shake de Chocolate',category:'Bebidas',description:'Cremoso e feito com chocolate de verdade.',price:19.9,image:'photo-1572490122747-3968b75cc699',label:'Doce pausa'},{id:6,name:'Limonada da Casa',category:'Bebidas',description:'Limão espremido na hora, refrescante e leve.',price:10.9,image:'./images/limonada-casa.webp'}];const money=n=>n.toLocaleString('pt-BR',{style:'currency',currency:'BRL'}),CartCtx=createContext(null),useCart=()=>useContext(CartCtx);function readCart(){try{return JSON.parse(localStorage.getItem('se-cart'))||[]}catch{return[]}}
-function Header({page,go}){const{count}=useCart();return <header className="header"><button className="brand" onClick={()=>go('inicio')}><i><Utensils size={19}/></i><b>Sabor<span>Express</span><small>LANCHONETE • DESDE 2024</small></b></button><button className="cart-button" onClick={()=>go('carrinho')}><ShoppingCart size={18}/> Carrinho {count>0&&<em>{count}</em>}</button></header>}
-const productImage=(image,width,quality)=>image.startsWith('photo-')?'https://images.unsplash.com/'+image+'?auto=format&fit=crop&w='+width+'&q='+quality:image;function Product({p}){const{add}=useCart();return <article className="product"><div className="product-img"><img src={productImage(p.image,800,85)} alt={p.name}/>{p.label&&<label><Sparkles size={12}/>{p.label}</label>}</div><div className="product-info"><small>{p.category}</small><h3>{p.name}</h3><p>{p.description}</p><footer><b>{money(p.price)}</b><button aria-label={'Adicionar '+p.name} onClick={()=>add(p)}><Plus size={19}/></button></footer></div></article>}
-function SiteFooter(){return <footer className="footer"><b>Sabor<span>Express</span></b><p>Uma demonstração da KYRO Labs. Feita para abrir o apetite.</p><small>© 2026 Sabor Express • Projeto demonstrativo</small></footer>}
-function Home({go}){return <main><section className="hero"><div className="hero-copy"><div className="pill"><i/> ABERTO AGORA　·　PEDIDOS DEMONSTRATIVOS</div><h1>A fome bateu?<br/>A gente <span>resolve.</span></h1><p>Hambúrguer artesanal, ingredientes de verdade e aquele sabor que faz você querer mais um.</p><div className="hero-actions"><button className="primary" onClick={()=>go('cardapio')}>Ver cardápio <ArrowRight size={18}/></button><small><Clock3 size={15}/> Prontinho em ~30 min</small></div><div className="hero-rating"><span>🍔　🍟　🥤</span><b>Feito pra matar a fome<small>Comida boa, sem complicação.</small></b></div></div><div className="hero-visual"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1200&q=90" alt="Hambúrguer artesanal"/><div className="sticker">feito com<strong>♥</strong>de verdade</div><div className="float-tag"><Flame size={17}/> O queridinho da casa</div></div><div className="scroll">↓　 DESCE PRA CONFERIR</div></section><section className="features"><div><Flame/><p><b>Feito na hora</b><small>Sempre fresquinho</small></p></div><div><Heart/><p><b>Ingredientes de verdade</b><small>Qualidade em cada mordida</small></p></div><div><Clock3/><p><b>Sem enrolação</b><small>Seu pedido, rapidinho</small></p></div></section><section className="section"><div className="section-title"><div><small>SEU PRÓXIMO FAVORITO</small><h2>Os mais pedidos<span>.</span></h2></div><button className="text-link" onClick={()=>go('cardapio')}>Ver cardápio completo <ArrowRight size={17}/></button></div><div className="grid">{products.filter(p=>p.featured).map(p=><Product key={p.id} p={p}/>)}</div><div className="promo"><div>🍔</div><section><small>BATEU AQUELA FOME?</small><h3>Tem sempre um bom motivo pra pedir.</h3><p>Escolha seus favoritos e monte seu combo do seu jeito.</p></section><button className="dark-button" onClick={()=>go('cardapio')}>Explorar cardápio <ArrowRight size={17}/></button></div></section><SiteFooter/></main>}
-function Menu({go}){const[cat,setCat]=useState('Todos'),cats=['Todos','Hambúrgueres','Acompanhamentos','Bebidas'],list=cat==='Todos'?products:products.filter(p=>p.category===cat);return <main className="page"><div className="intro"><small>FEITO COM CARINHO, SERVIDO COM SABOR</small><h1>Nosso cardápio<span>.</span></h1><p>Escolha seu favorito. O resto é com a gente.</p><div className="crumb"><button onClick={()=>go('inicio')}>Início</button> / Cardápio</div></div><div className="filters">{cats.map(c=><button className={cat===c?'selected':''} key={c} onClick={()=>setCat(c)}>{c}</button>)}</div><div className="grid">{list.map(p=><Product key={p.id} p={p}/>)}</div><SiteFooter/></main>}
-function Empty({go}){return <div className="empty"><ShoppingBag size={36}/><h2>Seu carrinho está esperando<span>.</span></h2><p>Tem tanta coisa gostosa por aqui. Que tal escolher alguma?</p><button className="primary" onClick={()=>go('cardapio')}>Explorar cardápio <ArrowRight size={18}/></button></div>}
-function Summary({total,go,action,label}){return <aside className="summary"><h2>Resumo do pedido</h2><p>Subtotal <b>{money(total)}</b></p><p>Entrega <b className="free">Grátis</b></p><hr/><h3>Total <b>{money(total)}</b></h3><button className="primary" onClick={action}>{label}<ArrowRight size={18}/></button><small>ⓘ Demonstração: nenhuma cobrança real.</small><button className="back" onClick={()=>go('cardapio')}><ArrowLeft size={14}/> Continuar comprando</button></aside>}
-function Cart({go}){const{cart,change,remove}=useCart(),total=cart.reduce((s,i)=>s+i.price*i.quantity,0);return <main className="page"><div className="intro"><div className="crumb"><button onClick={()=>go('inicio')}>Início</button> / Carrinho</div><h1>Seu carrinho<span>.</span></h1><p>Confira seus itens antes de continuar.</p></div>{!cart.length?<Empty go={go}/>:<div className="cart-layout"><section className="cart-items"><h3>SEU PEDIDO <span>{cart.reduce((s,i)=>s+i.quantity,0)} itens</span></h3>{cart.map(i=><article className="cart-item" key={i.id}><img src={productImage(i.image,240,80)} alt={i.name}/><div><small>{i.category}</small><h3>{i.name}</h3><b>{money(i.price)}</b></div><div className="controls"><button onClick={()=>change(i.id,-1)} aria-label="Diminuir"><Minus size={14}/></button><span>{i.quantity}</span><button onClick={()=>change(i.id,1)} aria-label="Aumentar"><Plus size={14}/></button><button className="trash" onClick={()=>remove(i.id)} aria-label="Remover"><Trash2 size={16}/></button><b>{money(i.price*i.quantity)}</b></div></article>)}<button className="back" onClick={()=>go('cardapio')}><ArrowLeft size={14}/> Adicionar mais delícias</button></section><Summary total={total} go={go} action={()=>go('pagamento')} label="Ir para pagamento"/></div>}<SiteFooter/></main>}
-function Payment({go}){const{cart,clear}=useCart(),[method,setMethod]=useState('Pix demonstrativo'),[done,setDone]=useState(false),total=cart.reduce((s,i)=>s+i.price*i.quantity,0),methods=[['Pix demonstrativo','Sem chave ou transação real','✳'],['Cartão demonstrativo','Nenhum dado de cartão será solicitado','▰'],['Dinheiro na entrega','Opção fictícia para esta demonstração','＄']];if(done)return <main className="page"><div className="success"><span><Check size={34}/></span><small>PEDIDO DEMONSTRATIVO</small><h1>Pedido concluído<span>.</span></h1><p>Esta foi apenas uma simulação. Nenhum pagamento foi realizado.</p><button className="primary" onClick={()=>go('inicio')}>Voltar ao início <ArrowRight size={18}/></button></div><SiteFooter/></main>;if(!cart.length)return <main className="page"><Empty go={go}/><SiteFooter/></main>;return <main className="page"><div className="intro"><div className="crumb"><button onClick={()=>go('carrinho')}>Carrinho</button> / Pagamento</div><h1>Quase lá<span>.</span></h1><p>Escolha uma forma de pagamento para concluir a demonstração.</p></div><div className="cart-layout"><section className="payment"><h3>FORMA DE PAGAMENTO <span>DEMONSTRATIVO</span></h3><p>Etapa fictícia. Não solicitamos dados pessoais ou bancários e nenhuma cobrança será feita.</p>{methods.map(([name,detail,icon])=><button key={name} className={'method '+(method===name?'chosen':'')} onClick={()=>setMethod(name)}><i>{icon}</i><span><b>{name}</b><small>{detail}</small></span><em>{method===name?'●':'○'}</em></button>)}<h3>Itens do pedido</h3>{cart.map(i=><p className="preview" key={i.id}>{i.quantity}× {i.name}<b>{money(i.price*i.quantity)}</b></p>)}</section><Summary total={total} go={go} action={()=>{clear();setDone(true)}} label="Confirmar pedido demonstrativo"/></div><SiteFooter/></main>}
-function App(){const[cart,setCart]=useState(readCart),[page,setPage]=useState(location.hash.slice(1)||'inicio');useEffect(()=>{localStorage.setItem('se-cart',JSON.stringify(cart))},[cart]);useEffect(()=>{const f=()=>setPage(location.hash.slice(1)||'inicio');addEventListener('hashchange',f);return()=>removeEventListener('hashchange',f)},[]);const go=p=>{location.hash=p;setPage(p);scrollTo(0,0)},add=p=>setCart(c=>{const i=c.find(x=>x.id===p.id);return i?c.map(x=>x.id===p.id?{...x,quantity:x.quantity+1}:x):[...c,{...p,quantity:1}]}),change=(id,n)=>setCart(c=>c.map(i=>i.id===id?{...i,quantity:i.quantity+n}:i).filter(i=>i.quantity>0)),remove=id=>setCart(c=>c.filter(i=>i.id!==id)),clear=()=>setCart([]),count=cart.reduce((s,i)=>s+i.quantity,0),value=useMemo(()=>({cart,count,add,change,remove,clear}),[cart,count]),pages={inicio:<Home go={go}/>,cardapio:<Menu go={go}/>,carrinho:<Cart go={go}/>,pagamento:<Payment go={go}/>};return <CartCtx.Provider value={value}><div className="app"><Header page={page} go={go}/>{pages[page]||pages.inicio}<div className="ribbon">PROJETO DEMONSTRATIVO　•　SEM COMPRAS REAIS</div></div></CartCtx.Provider>};createRoot(document.getElementById('root')).render(<React.StrictMode><App/></React.StrictMode>);
+import React, { createContext, useContext, useEffect, useState } from 'react';
+import { createRoot } from 'react-dom/client';
+import { ArrowLeft, ArrowRight, Check, Minus, Plus, ShoppingBag, ShoppingCart, Trash2, Utensils } from 'lucide-react';
+import { products, money, productImage, readCart, saveCart } from './catalog.js';
+import './styles.css';
+
+const CartContext = createContext(null);
+const useCart = () => useContext(CartContext);
+
+function Header({ go }) {
+  const { count } = useCart();
+  return <header className="header">
+    <button className="brand" onClick={() => go('inicio')} aria-label="Sabor Express, início">
+      <i><Utensils size={19}/></i><b>Sabor<span>Express</span><small>CARDÁPIO DEMONSTRATIVO</small></b>
+    </button>
+    <button className="cart-button" onClick={() => go('carrinho')} aria-label={`Carrinho, ${count} itens`}>
+      <ShoppingCart size={18}/> Carrinho {count > 0 && <em>{count}</em>}
+    </button>
+  </header>;
+}
+
+function Product({ product }) {
+  const { add } = useCart();
+  return <article className="product">
+    <div className="product-img"><img src={productImage(product.image, 800)} alt={product.name} loading="lazy" width="800" height="600"/></div>
+    <div className="product-info">
+      <small>{product.category}</small><h3>{product.name}</h3><p>{product.description}</p>
+      <footer><b>{money(product.price)}</b><button aria-label={`Adicionar ${product.name}`} onClick={() => add(product)}><Plus size={19}/></button></footer>
+    </div>
+  </article>;
+}
+
+function SiteFooter() {
+  return <footer className="footer"><b>Sabor<span>Express</span></b><p>Cardápio de demonstração da Draxivo Digital. Sem pedidos ou cobranças reais.</p><a href="../../index.html#projetos">Voltar ao portfólio</a></footer>;
+}
+
+function Home({ go }) {
+  return <main id="conteudo" tabIndex={-1}>
+    <section className="hero">
+      <div className="hero-copy">
+        <div className="pill">SABOR EXPRESS · CARDÁPIO DEMONSTRATIVO</div>
+        <h1>Hambúrguer,<br/>batata e <span>companhia.</span></h1>
+        <p>Do clássico com salada ao duplo cheddar. Veja os ingredientes, escolha os acompanhamentos e monte seu pedido.</p>
+        <div className="hero-actions"><button className="primary" onClick={() => go('cardapio')}>Ver cardápio <ArrowRight size={18}/></button></div>
+        <p className="demo-copy">Este é um restaurante fictício. Os valores e as imagens são ilustrativos.</p>
+      </div>
+      <div className="hero-visual"><img src={productImage(products[0].image, 1000)} alt="Hambúrguer com queijo, salada e molho" width="1000" height="900" fetchPriority="high"/></div>
+    </section>
+    <section className="section">
+      <div className="section-title"><div><small>PARA COMEÇAR</small><h2>Hambúrgueres da casa</h2></div><button className="text-link" onClick={() => go('cardapio')}>Todo o cardápio <ArrowRight size={17}/></button></div>
+      <div className="grid">{products.filter(p => p.featured).map(p => <Product key={p.id} product={p}/>)}</div>
+    </section>
+    <SiteFooter/>
+  </main>;
+}
+
+function Menu({ go }) {
+  const [category, setCategory] = useState('Todos');
+  const categories = ['Todos', 'Hambúrgueres', 'Acompanhamentos', 'Bebidas'];
+  const list = category === 'Todos' ? products : products.filter(p => p.category === category);
+  return <main className="page" id="conteudo" tabIndex={-1}>
+    <div className="intro"><h1>Cardápio</h1><p>Ingredientes e valores por item. Adicione ao carrinho para experimentar a demonstração.</p><div className="crumb"><button onClick={() => go('inicio')}>Início</button> / Cardápio</div></div>
+    <div className="filters" role="group" aria-label="Categorias">{categories.map(c => <button className={category === c ? 'selected' : ''} aria-pressed={category === c} key={c} onClick={() => setCategory(c)}>{c}</button>)}</div>
+    <div className="grid">{list.map(p => <Product key={p.id} product={p}/>)}</div>
+    <SiteFooter/>
+  </main>;
+}
+
+function Empty({ go }) {
+  return <div className="empty"><ShoppingBag size={36}/><h2>Seu carrinho está vazio.</h2><p>Escolha os itens no cardápio para continuar.</p><button className="primary" onClick={() => go('cardapio')}>Ver cardápio <ArrowRight size={18}/></button></div>;
+}
+
+function Summary({ total, go, action, label }) {
+  return <aside className="summary"><h2>Resumo do pedido</h2><p>Subtotal <b>{money(total)}</b></p><p>Entrega <b>Não se aplica</b></p><hr/><h3>Total ilustrativo <b>{money(total)}</b></h3><button className="primary" onClick={action}>{label}<ArrowRight size={18}/></button><small>Demonstração: nenhuma cobrança real.</small><button className="back" onClick={() => go('cardapio')}><ArrowLeft size={14}/> Continuar no cardápio</button></aside>;
+}
+
+function Cart({ go }) {
+  const { cart, change, remove } = useCart();
+  const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  return <main className="page" id="conteudo" tabIndex={-1}>
+    <div className="intro"><h1>Seu carrinho</h1><p>Confira os itens e as quantidades.</p></div>
+    {!cart.length ? <Empty go={go}/> : <div className="cart-layout">
+      <section className="cart-items"><h2>Itens do pedido</h2>{cart.map(item => <article className="cart-item" key={item.id}>
+        <img src={productImage(item.image, 240)} alt={item.name} width="70" height="70"/>
+        <div><small>{item.category}</small><h3>{item.name}</h3><b>{money(item.price)}</b></div>
+        <div className="controls">
+          <button onClick={() => change(item.id, -1)} aria-label={`Diminuir ${item.name}`}><Minus size={14}/></button><span>{item.quantity}</span>
+          <button onClick={() => change(item.id, 1)} disabled={item.quantity >= 20} aria-label={`Aumentar ${item.name}`}><Plus size={14}/></button>
+          <button className="trash" onClick={() => remove(item.id)} aria-label={`Remover ${item.name}`}><Trash2 size={16}/></button><b>{money(item.price * item.quantity)}</b>
+        </div>
+      </article>)}</section>
+      <Summary total={total} go={go} action={() => go('pagamento')} label="Revisar pedido"/>
+    </div>}
+    <SiteFooter/>
+  </main>;
+}
+
+function Payment({ go }) {
+  const { cart, clear } = useCart();
+  const [method, setMethod] = useState('Pix demonstrativo');
+  const [done, setDone] = useState(false);
+  const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const methods = [
+    ['Pix demonstrativo', 'Sem chave ou transação real'],
+    ['Cartão demonstrativo', 'Nenhum dado de cartão será solicitado'],
+    ['Dinheiro na entrega', 'Opção fictícia para esta demonstração'],
+  ];
+  if (done) return <main className="page" id="conteudo" tabIndex={-1}><div className="success"><span><Check size={34}/></span><small>PEDIDO DEMONSTRATIVO</small><h1>Simulação concluída.</h1><p>Nenhum pedido foi enviado e nenhum pagamento foi realizado.</p><button className="primary" onClick={() => go('inicio')}>Voltar ao início <ArrowRight size={18}/></button></div><SiteFooter/></main>;
+  if (!cart.length) return <main className="page" id="conteudo" tabIndex={-1}><Empty go={go}/><SiteFooter/></main>;
+  return <main className="page" id="conteudo" tabIndex={-1}>
+    <div className="intro"><h1>Revisar pedido</h1><p>Escolha uma opção para concluir a simulação.</p></div>
+    <div className="cart-layout"><section className="payment">
+      <h2>Forma de pagamento ilustrativa</h2><p>Não solicitamos dados pessoais ou bancários.</p>
+      <div role="group" aria-label="Forma de pagamento">{methods.map(([name, detail]) => <button key={name} className={`method ${method === name ? 'chosen' : ''}`} aria-pressed={method === name} onClick={() => setMethod(name)}><span><b>{name}</b><small>{detail}</small></span></button>)}</div>
+      <h3>Itens do pedido</h3>{cart.map(item => <p className="preview" key={item.id}>{item.quantity}× {item.name}<b>{money(item.price * item.quantity)}</b></p>)}
+    </section><Summary total={total} go={go} action={() => { clear(); setDone(true); }} label="Concluir simulação"/></div>
+    <SiteFooter/>
+  </main>;
+}
+
+function App() {
+  const [cart, setCart] = useState(readCart);
+  const [page, setPage] = useState(location.hash.slice(1) || 'inicio');
+  const [notice, setNotice] = useState('');
+  useEffect(() => { saveCart(cart); }, [cart]);
+  useEffect(() => {
+    const update = () => setPage(location.hash.slice(1) || 'inicio');
+    addEventListener('hashchange', update);
+    return () => removeEventListener('hashchange', update);
+  }, []);
+  useEffect(() => {
+    document.getElementById('conteudo')?.focus({ preventScroll: true });
+    scrollTo(0, 0);
+  }, [page]);
+  const go = next => { location.hash = next; setPage(next); };
+  const add = product => {
+    setCart(current => {
+      const existing = current.find(item => item.id === product.id);
+      return existing ? current.map(item => item.id === product.id ? { ...item, quantity: Math.min(20, item.quantity + 1) } : item) : [...current, { ...product, quantity: 1 }];
+    });
+    setNotice(`${product.name} adicionado ao carrinho. Limite de 20 por item.`);
+  };
+  const change = (id, amount) => setCart(current => current.map(item => item.id === id ? { ...item, quantity: Math.min(20, item.quantity + amount) } : item).filter(item => item.quantity > 0));
+  const remove = id => setCart(current => current.filter(item => item.id !== id));
+  const clear = () => setCart([]);
+  const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+  const pages = { inicio: <Home go={go}/>, cardapio: <Menu go={go}/>, carrinho: <Cart go={go}/>, pagamento: <Payment go={go}/> };
+  return <CartContext.Provider value={{ cart, count, add, change, remove, clear }}><div className="app"><a className="skip-link" href="#conteudo">Ir para o conteúdo</a><Header go={go}/><div className="sr-only" role="status" aria-live="polite">{notice}</div>{pages[page] || pages.inicio}</div></CartContext.Provider>;
+}
+
+createRoot(document.getElementById('root')).render(<React.StrictMode><App/></React.StrictMode>);

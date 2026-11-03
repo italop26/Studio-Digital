@@ -6,7 +6,7 @@
 
   <!-- SEO básico -->
   <title>Draxivo Digital | Sites, sistemas e automações para pequenos negócios</title>
-  <meta name="description" content="Draxivo Digital cria sites, landing pages, sistemas e automações para pequenos negócios e profissionais autônomos. Soluções rápidas, responsivas e feitas para atrair clientes.">
+  <meta name="description" content="Sites e landing pages para pequenos negócios e profissionais autônomos. Conheça o portfólio da Draxivo Digital e solicite uma conversa sobre seu projeto.">
   <meta name="theme-color" content="#14121F">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="canonical" href="https://draxivo-digital.vercel.app/">
@@ -16,7 +16,9 @@
   <meta property="og:title" content="Draxivo Digital | Sites, sistemas e automações">
   <meta property="og:description" content="Sites, landing pages, sistemas e automações para pequenos negócios e profissionais autônomos.">
   <meta property="og:locale" content="pt_BR">
-  <!-- TODO: adicionar og:image (1200x630) em assets/images/ -->
+  <meta property="og:url" content="https://draxivo-digital.vercel.app/">
+  <meta property="og:site_name" content="Draxivo Digital">
+  <meta name="twitter:card" content="summary">
 
   <!-- Fontes: só os pesos necessários -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -64,9 +66,9 @@
       <div class="container hero__inner">
         <div class="hero__text">
           <p class="eyebrow">Sites para pequenos negócios e autônomos</p>
-          <h1 id="hero-titulo">Seu negócio merece ser <span class="hl">encontrado.</span></h1>
+          <h1 id="hero-titulo">Um site para apresentar <span class="hl">o seu negócio.</span></h1>
           <p class="hero__lead">
-            Crio sites e landing pages rápidos, bonitos e pensados para trazer clientes de verdade.
+            Seus serviços, seus horários e um caminho fácil para entrar em contato. Desenvolvo sites para quem precisa organizar tudo isso em um só lugar.
           </p>
           <div class="hero__actions">
             <a class="btn btn--cta" href="#contato">Solicitar orçamento</a>
@@ -74,23 +76,20 @@
           </div>
         </div>
 
-        <!-- Elemento visual: janela de navegador feita com formas geométricas (SVG) -->
-        <div class="hero__visual" aria-hidden="true">
-          <svg viewBox="0 0 480 400" role="img" focusable="false">
-            <title>Ilustração de uma janela de navegador montada com blocos coloridos</title>
-            <rect class="v-window" x="20" y="40" width="400" height="300" rx="14"/>
-            <rect class="v-bar" x="20" y="40" width="400" height="36" rx="14"/>
-            <circle class="v-dot v-dot--1" cx="46" cy="58" r="6"/>
-            <circle class="v-dot v-dot--2" cx="66" cy="58" r="6"/>
-            <circle class="v-dot v-dot--3" cx="86" cy="58" r="6"/>
-            <rect class="v-block v-block--violet" x="44" y="100" width="170" height="120" rx="8"/>
-            <circle class="v-block v-block--lime" cx="300" cy="150" r="52"/>
-            <path class="v-block v-block--coral" d="M44 312v-27a65 65 0 0 1 130 0v27z"/>
-            <rect class="v-line" x="190" y="252" width="190" height="10" rx="5"/>
-            <rect class="v-line" x="190" y="274" width="140" height="10" rx="5"/>
-            <rect class="v-line" x="190" y="296" width="170" height="10" rx="5"/>
-          </svg>
-        </div>
+        <figure class="hero__computer" aria-label="Notebook com uma prévia do site da Draxivo Digital">
+          <div class="notebook">
+            <div class="notebook__screen" aria-hidden="true">
+              <div class="notebook__bar"><b><span>D</span> Draxivo Digital</b><span>Início &nbsp; Serviços &nbsp; Projetos</span></div>
+              <div class="notebook__page">
+                <div><small>SITES PARA PEQUENOS NEGÓCIOS</small><strong>Seu negócio<br>merece ser<br><em>encontrado.</em></strong><p>Seu trabalho, em um site feito para ele.</p><span class="notebook__cta">Vamos conversar</span></div>
+                <div class="notebook__browser"><div><i></i><i></i><i></i></div><span></span><span></span><span></span><span></span></div>
+              </div>
+              <div class="notebook__bottom">Sites · Sistemas · Automações</div>
+            </div>
+            <div class="notebook__base" aria-hidden="true"></div>
+          </div>
+          <figcaption>Seu negócio também pode ter um endereço na web.</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -134,7 +133,6 @@
           <p class="eyebrow">Portfólio</p>
           <h2 id="projetos-titulo">Projetos</h2>
           <p class="section__lead">Projetos demonstrativos criados para mostrar na prática como posso desenvolver o seu site.</p>
-          <h3 id="projetos-titulo">Aperte em abrir demonstração para abir o site</h3>
         </header>
 
         <ul class="cards cards--3">
@@ -142,19 +140,16 @@
           <!-- Projeto 1: Sabor-express (demonstrativo) -->
           <li class="card project">
             <div class="project__media">
-              <!-- TODO: trocar pelo print real: <img src="assets/images/barber-shop.jpg" alt="..." width="800" height="500" loading="lazy"> -->
               <img src="assets/images/hambuguer.webp" alt="Hambúrguer artesanal com queijo, molho, picles, tomate e alface" width="374" height="311" loading="lazy">
               <span class="badge badge--demo">Projeto demonstrativo</span>
             </div>
             <div class="project__body">
               <h3>Sabor Express</h3>
-              <p>Uma Lanchonete demonstrativa para facilitar as compras dos seus clientes.</p>
-              <!-- TODO: quando o projeto estiver no ar, trocar por <a class="btn btn--small" href="URL" target="_blank" rel="noopener">Ver demonstração</a> -->
+              <p>Cardápio digital demonstrativo para uma lanchonete. Explore os produtos e o fluxo de escolha dos itens.</p>
               <a class="btn btn--small" href="sabor-express/dist/index.html">Abrir demonstração</a>
             </div>
           </li>
 
-          <!-- Projetos futuros (mesma estrutura, para preencher depois) -->
            <!--Projeto 2: Barber-Shop -->
           <li class="card project">
             <div class="project__media">
@@ -169,16 +164,18 @@
           </li>
           <li class="card project">
           <div class="project__media">
-            <img src="assets/images/dashboard.webp" alt="Painel de recrutamento com métricas, vagas e atividade de candidatos" width="507" height="231" loading="lazy">
+              <div class="project__cover" aria-hidden="true">
+                <span>ATLÂNTICA / GESTÃO</span>
+                <strong>Visão geral<br>da sua equipe.</strong>
+                <span>Vagas · Candidatos · Atividades</span>
+              </div>
               <span class="badge badge--demo">Projeto demonstrativo</span>
           </div>
       
           
-            <span class="badge badge--demo">Projeto demonstrativo</span>
-           
             <div class="project__body">
-              <h3>Dashboard FastAPI</h3>
-              <p>Painel de dados para monitorar seus negócios.</p>
+              <h3>Painel Atlântica</h3>
+              <p>Painel empresarial demonstrativo, com indicadores e tabelas de colaboradores, clientes e receita.</p>
               <a class="btn btn--small" href="dashboard/Painel Atlântica.html">Abrir demonstração</a>
             </div>
           </li>
@@ -224,12 +221,11 @@
       <div class="container about">
         <header class="section__head">
           <p class="eyebrow">Sobre o estúdio</p>
-          <h2 id="sobre-titulo">Tecnologia com cuidado em cada detalhe</h2>
+          <h2 id="sobre-titulo">Quem está por trás da Draxivo</h2>
         </header>
         <div class="about__text">
-          <!-- TODO: revisar e personalizar com a sua história. Não incluir nada que não seja verdade. -->
-          <p>A Draxivo Digital cria sites, landing pages, sistemas e automações para ajudar pequenos negócios e profissionais autônomos a terem uma presença digital clara e profissional.</p>
-          <p>Cada site é desenvolvido do zero, sem templates prontos, com atenção à velocidade, ao uso no celular e à facilidade de contato com o cliente.</p>
+          <p>A Draxivo Digital é meu estúdio de desenvolvimento para pequenos negócios e profissionais autônomos.</p>
+          <p>Meu foco é organizar as informações do seu negócio em um site fácil de usar, especialmente no celular. A estrutura e os recursos são definidos de acordo com o que você precisa.</p>
           <p>Sou estudante de Análise e Desenvolvimento de Sistemas e trabalho com compromisso: converso, explico cada etapa e entrego o que combinamos.</p>
         </div>
       </div>
@@ -243,38 +239,36 @@
           <h2 id="contato-titulo">Peça seu orçamento</h2>
           <p>Conte o que você precisa. Respondo para combinar os próximos passos.</p>
 
-          <!-- TODO: trocar 5500000000000 pelo número real (55 + DDD + número, só dígitos) -->
           <a class="btn btn--cta" id="btn-whatsapp"
-             href="https://wa.me/558189349248?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Draxivo%20Digital%20e%20gostaria%20de%20um%20or%C3%A7amento."
+             href="https://wa.me/5581989349248?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Draxivo%20Digital%20e%20gostaria%20de%20um%20or%C3%A7amento."
              target="_blank" rel="noopener">Falar no WhatsApp</a>
 
           <ul class="social" aria-label="Redes profissionais">
-            <!-- TODO: preencher com os links reais (ou remover os que não usar) -->
-            <li><a href="https://www.instagram.com/draxivodigital/" target="_blank" rel="noopener noreferrer" data-todo="instagram">Instagram</a></li>
-            <li><a href="https://www.linkedin.com/in/italo-pedro-20590a3a6/"target="_blank" rel="noopener noreferrer" data-todo="linkedin">LinkedIn</a></li>
-            <li><a href="https://github.com/italop26" target="_blank" rel="noopener noreferrer" data-todo="github">GitHub</a></li>
+            <li><a href="https://www.instagram.com/draxivodigital/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="https://www.linkedin.com/in/italo-pedro-20590a3a6/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://github.com/italop26" target="_blank" rel="noopener noreferrer">GitHub</a></li>
           </ul>
         </div>
 
-        <!-- Formulário de agendamento.
-             O envio real depende de um serviço de recebimento (definimos na etapa do JavaScript).
-             data-endpoint fica vazio até lá. -->
-        <form class="form" id="form-agendamento" method="post" action="https://formspree.io/f/mgaonlar" data-endpoint="https://formspree.io/f/mgaonlar" novalidate>
-          <h3>Agendar uma conversa</h3>
+        <!-- O horário sugerido será confirmado em contato direto. -->
+        <form class="form" id="form-agendamento" method="post" action="https://formspree.io/f/mgaonlar" data-endpoint="https://formspree.io/f/mgaonlar" data-success-url="agendamento/index.html">
+          <h3>Solicitar uma conversa</h3>
+          <p class="form__intro" id="agendamento-ajuda">Deixe seu contato e, se quiser, sugira um dia. Confirmo a disponibilidade com você pelo WhatsApp.</p>
 
           <div class="field">
             <label for="nome">Nome</label>
-            <input type="text" id="nome" name="nome" autocomplete="name" required>
+            <input type="text" id="nome" name="nome" autocomplete="name" minlength="2" maxlength="80" required>
           </div>
 
           <div class="field">
             <label for="whatsapp">WhatsApp</label>
-            <input type="tel" id="whatsapp" name="whatsapp" autocomplete="tel" inputmode="tel" required>
+            <input type="tel" id="whatsapp" name="whatsapp" autocomplete="tel" inputmode="tel" maxlength="20" aria-describedby="whatsapp-ajuda" required>
+            <small id="whatsapp-ajuda">Inclua o DDD. Ex.: (81) 99999-9999.</small>
           </div>
 
           <div class="field">
             <label for="email">E-mail <span class="optional">(opcional)</span></label>
-            <input type="email" id="email" name="email" autocomplete="email">
+            <input type="email" id="email" name="email" autocomplete="email" maxlength="254">
           </div>
 
           <div class="field">
@@ -306,8 +300,14 @@
           </div>
 
           <div class="field">
-            <label for="mensagem">Conte sobre seu negócio</label>
-            <textarea id="mensagem" name="mensagem" rows="4"></textarea>
+            <label for="mensagem">O que você precisa?</label>
+            <textarea id="mensagem" name="mensagem" rows="4" minlength="10" maxlength="1500" aria-describedby="mensagem-ajuda" required></textarea>
+            <small id="mensagem-ajuda">De 10 a 1.500 caracteres. Não inclua senhas ou dados bancários.</small>
+          </div>
+          <div class="form__rules" id="regras-agendamento">
+            <p>Antes de enviar</p>
+            <ul><li>Informe um WhatsApp com DDD para receber o retorno.</li><li>O dia e o período são sugestões, sujeitos à disponibilidade.</li><li>O envio não reserva um horário automaticamente.</li></ul>
+            <p>Seu contato será usado para responder a esta solicitação.</p>
           </div>
 
           <!-- Campo isca contra robôs: humanos não veem, robôs preenchem -->
@@ -316,7 +316,7 @@
             <input type="text" id="site" name="site" tabindex="-1" autocomplete="off">
           </div>
 
-          <button class="btn btn--cta" type="submit">Agendar conversa</button>
+          <button class="btn btn--cta" type="submit" aria-describedby="agendamento-ajuda">Enviar pedido de conversa</button>
           <p class="form__status" role="status" aria-live="polite"></p>
         </form>
       </div>

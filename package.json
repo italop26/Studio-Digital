@@ -1,0 +1,14 @@
+{
+  "name": "draxivo-digital",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfólio Draxivo Digital e demonstrações web",
+  "engines": { "node": ">=22.12.0" },
+  "scripts": {
+    "test": "node --test tests/*.test.cjs",
+    "check": "node scripts/check.cjs",
+    "build": "node scripts/build.cjs",
+    "preview": "node scripts/serve.cjs",
+    "smoke": "node scripts/smoke.cjs"
+  }
+}
