@@ -2,7 +2,8 @@
 
 Portfólio de desenvolvimento para pequenos negócios, com três demonstrações navegáveis: Barber Shop, Sabor Express e Painel Atlântica.
 
-Repositório: [italop26/Studio-Digital](https://github.com/italop26/Studio-Digital).
+Repositório: [italop26/Studio-Digital]
+Site: (https://github.com/italop26/Studio-Digital).
 
 ## Executar localmente
 
