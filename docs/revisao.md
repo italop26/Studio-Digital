@@ -22,6 +22,8 @@
 
 Resultado local: 17 testes passaram; build e check passaram. `npm run smoke` confirmou respostas HTTP das páginas, CSS, JavaScript, sitemap e robots, incluindo o retorno 404 para caminho inexistente. O servidor de teste foi encerrado ao final.
 
+Correção posterior do CI: a sequência inicial rodava os testes antes do build. Em uma cópia limpa, o teste de links falhava porque `sabor-express/dist/index.html` ainda não existia. A falha foi reproduzida com os arquivos versionados; workflow e README foram corrigidos para gerar os arquivos antes de verificá-los. Os testes de links permanecem ativos.
+
 Foram retirados do índice do Git 4.734 arquivos gerados e de configuração local, preservando as cópias de trabalho. As fontes novas ainda devem ser adicionadas junto com as demais alterações antes do commit.
 
 ## Pendências de entrega

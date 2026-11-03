@@ -11,14 +11,16 @@ Requer Node.js 22.12 ou superior; o CI usa Node.js 24. Na raiz do projeto:
 ```sh
 npm ci
 npm ci --prefix sabor-express
-npm test
 npm run build
+npm test
 npm run check
 npm run smoke
 npm run preview
 ```
 
 Abra `http://127.0.0.1:4173`. No PowerShell, se a política de execução bloquear `npm.ps1`, use `npm.cmd` nos mesmos comandos. Para editar apenas o Sabor Express com atualização automática: `npm run dev --prefix sabor-express`.
+
+Em uma cópia nova do repositório, execute o build antes dos testes: a verificação de links também confere `sabor-express/dist/index.html`, gerado pelo Vite e ignorado pelo Git. O workflow segue essa mesma ordem.
 
 ## Organização
 
